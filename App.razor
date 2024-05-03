@@ -1,20 +1,12 @@
-﻿@using Ravenhill.Components
-<!-- Define the router component with the assembly of the main application -->
-<Router AppAssembly="@typeof(App).Assembly">
-    <!-- Handle the case when a route is found -->
+﻿<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <!-- Render the RouteView component to display the appropriate page based on the route data -->
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
-        <!-- Automatically focus on the first <h1> element when navigating -->
         <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
     </Found>
-    <!-- Handle the case when no matching route is found -->
     <NotFound>
-        <!-- Set the title for the not found page -->
         <PageTitle>Not found</PageTitle>
-        <!-- Render the NotFoundComponent within the MainLayout -->
         <LayoutView Layout="@typeof(MainLayout)">
-            <NotFoundComponent/>
+            <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
 </Router>
