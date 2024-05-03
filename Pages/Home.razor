@@ -1,7 +1,35 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle xmlns="http://www.w3.org/1999/html">Inicio</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="main-container">
+    <h1 class="main-header">Ravenhill</h1>
+    <p class="welcome-text">
+        Adicto obsesivo con un sueño por enseñar lo que me motiva. Contra creencia popular, sí
+        soy un cuervo irl.
+    </p>
+    <div class="content-sections">
+        <a href="keen" class="content-tile keen">
+            <img alt="Keen logo" class="content-tile-logo" width="100%" src="images/keen-logo.png">
+            <p>Keen: by evolution, for evolution</p>
+        </a>
+        <a href="memes2" class="content-tile memes2">
+            <h2>Metodologías de diseño y Programación Avanzadas</h2>
+            <p>
+                El curso "Metodologías de diseño y programación avanzadas" intensifica las habilidades en diseño y
+                programación para enfrentar problemas de software complejos.
+            </p>
+        </a>
+    </div>
+</div>
 
-Welcome to your new app.
+<style>
+    .content-title-logo {
+        display: block;  /* Adjust display if necessary */
+        width: 50%;      /* Set your desired width */
+        height: auto;    /* Maintain aspect ratio */
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;    /* Center the logo */
+    }
+</style>

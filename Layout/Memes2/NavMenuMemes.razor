@@ -1,0 +1,26 @@
+@using Ravenhill.Components
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Ravenhill</a>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <NavItem Link="/memes2/lessons" Text="Clases"/>
+        <NavItem Link="/memes2/about" Text="Propósito del curso"/>
+        <NavItem Link="/memes2/syllabus" Text="Temario"/>
+        <NavItem Link="/memes2/notes" Text="Apuntes"/>
+    </nav>
+</div>
+
+@code {
+    private bool _collapseNavMenu = true;
+
+    private string? NavMenuCssClass => _collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu() {
+        _collapseNavMenu = !_collapseNavMenu;
+    }
+
+}

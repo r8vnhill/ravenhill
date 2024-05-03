@@ -1,16 +1,54 @@
-﻿@inherits LayoutComponentBase
+﻿<!-- Import the necessary namespaces -->
+@using Ravenhill.Components
+@using Ravenhill.Layout.Keen
+@using Ravenhill.Layout.Memes2
+@using Ravenhill.Services
+@inherits LayoutComponentBase
+
+@inject NavigationManager NavigationManager
+@inject ThemeService ThemeService
+
 <div class="page">
+    <!-- Main container for the layout -->
+
+    <!-- Sidebar section -->
     <div class="sidebar">
-        <NavMenu/>
+        <!-- Determine which navigation menu component to render based on current URL -->
+        @if (NavigationManager.Uri.Contains("/memes2")) {
+            <NavMenuMemes/>
+        }
+        else if (NavigationManager.Uri.Contains("/keen")) {
+            <NavMenuKeen/>
+        }
+        else {
+            <NavMenu/>
+        }
     </div>
 
+    <!-- Main content section -->
     <main>
+        <!-- Top row containing buttons -->
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <div class="button-container">
+                <!-- Render the DarkModeToggle component -->
+                <DarkModeToggle/>
+                <!-- GitHub link -->
+                <a href="https://www.github.com/r8vnhill" target="_blank">Github</a>
+            </div>
         </div>
 
+        <!-- Content area where page-specific content will be rendered -->
         <article class="content px-4">
-            @Body
+            @Body <!-- Render the page-specific content -->
         </article>
     </main>
 </div>
+
+@code {
+
+// Initialize theme asynchronously when the component is initialized
+    protected override async Task OnInitializedAsync() {
+        await ThemeService.InitializeThemeAsync();
+    }
+
+}
