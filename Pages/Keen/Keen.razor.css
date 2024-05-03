@@ -9,3 +9,19 @@
     background-repeat: no-repeat;
     background-position: center; /* Center the background image */
 }
+
+/* Adjust the font size and maximum width for the description */
+.description {
+    font-size: 1.5em;
+    max-width: 100%; /* Allow the description to take the full width of the viewport */
+    margin: 20px auto; /* Center the description horizontally with some vertical margin */
+    padding: 0 15px; /* Padding on smaller screens */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Apply different styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .description {
+        font-size: 1.2em; /* Decrease the font size */
+    }
+}
