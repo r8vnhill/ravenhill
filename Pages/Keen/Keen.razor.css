@@ -5,4 +5,7 @@
 .logo-img {
     max-width: 50%; /* Adjust the maximum width of the logo */
     height: auto; /* Maintain aspect ratio */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
 }
