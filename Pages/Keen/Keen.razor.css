@@ -1,0 +1,8 @@
+.logo {
+    text-align: center; /* Center the logo */
+}
+
+.logo-img {
+    max-width: 50%; /* Adjust the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}

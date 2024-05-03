@@ -1,0 +1,26 @@
+@using Ravenhill.Services
+@inject ThemeService ThemeService
+
+<!-- Button to toggle between light and dark modes -->
+<button aria-label="@AriaLabel()" @onclick="ToggleTheme" title="Dark Mode">
+    @ThemeIcon() <!-- Render the theme icon -->
+</button>
+
+@code {
+
+    // Method to toggle the theme asynchronously
+    private async Task ToggleTheme() {
+        await ThemeService.ToggleThemeAsync();
+    }
+
+    // Method to determine the appropriate ARIA label based on the current theme
+    private string AriaLabel() {
+        return ThemeService.CurrentTheme == "dark" ? "Activate light mode" : "Activate dark mode";
+    }
+
+    // Method to determine the appropriate theme icon based on the current theme
+    private string ThemeIcon() {
+        return ThemeService.CurrentTheme == "dark" ? "🌞" : "🌙";
+    }
+
+}
