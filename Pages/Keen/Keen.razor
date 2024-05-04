@@ -11,7 +11,7 @@
         </a>
         <a href="https://opensource.org/licenses/BSD-2-Clause" target="_blank" aria-label="View BSD 2-Clause License">
             <img src="https://img.shields.io/badge/License-BSD_2--Clause-orange.svg" alt="License">
-        </a>
+        </a>w
     </div>
     <div class="logo">
         <img src="images/keen-logo.png" alt="Keen Logo" class="logo-img">
@@ -31,4 +31,67 @@
         architecture means you can easily extend or modify components, from selection and crossover methods to mutation and
         fitness evaluation.
     </p>
+</section>
+
+<section class="one-max">
+    <h2>OneMax Example</h2>
+    <p>
+        The following example demonstrates how to solve the OneMax problem using Keen. The OneMax problem is a simple
+        optimization problem where the goal is to maximize the number of ones in a binary string.
+    </p>
+    <pre>
+    <code class="language-kotlin">
+private fun count(genotype: Genotype&lt;Boolean, BooleanGene&gt;) = genotype.flatten().count { it }.toDouble()
+
+fun main() {
+    val engine = evolutionEngine(::count, genotypeOf {
+        chromosomeOf {
+            booleans {
+                size = 50
+                trueRate = 0.15
+            }
+        }
+    }) {
+        alterers += listOf(BitFlipMutator(individualRate = 0.5), UniformCrossover(chromosomeRate = 0.6))
+        limits += TargetFitness(50.0)
+        listeners += listOf(EvolutionSummary(), EvolutionPlotter())
+    }
+    engine.evolve()
+    engine.listeners.forEach { it.display() }
+}
+    </code>
+    </pre>
+
+    <h4>Output</h4>
+    <pre>
+------------ Evolution Summary ---------------
+|--> Initialization time: 834 ms
+------------- Evaluation Times ----------------
+|--> Average: 0.0 ms
+|--> Max: 0 ms
+|--> Min: 0 ms
+-------------- Selection Times ----------------
+|   |--> Offspring Selection
+|   |   |--> Average: 0.4077922077922078 ms
+|   |   |--> Max: 157 ms
+|   |   |--> Min: 0 ms
+|   |--> Survivor Selection
+|   |   |--> Average: 0.0 ms
+|   |   |--> Max: 0 ms
+|   |   |--> Min: 0 ms
+--------------- Alteration Times --------------
+|--> Average: 2.433766233766234 ms
+|--> Max: 910 ms
+|--> Min: 0 ms
+-------------- Evolution Results --------------
+|--> Total time: 3714 ms
+|--> Average generation time: 7.992207792207792 ms
+|--> Max generation time: 2982 ms
+|--> Min generation time: 0 ms
+|--> Generation: 385
+|--> Steady generations: 0
+|--> Fittest: [0011 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111]
+|--> Best fitness: 50.0
+</pre>
+    <img src="images/onemax_fitness.png" alt="OneMax Fitness Plot" class="plot">
 </section>
