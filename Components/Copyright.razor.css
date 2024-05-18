@@ -1,0 +1,19 @@
+.site-footer {
+    position: fixed; /* Makes the footer stick to the bottom */
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-background); /* Use the background color variable */
+    color: #fff; /* White text color */
+    text-align: center; /* Center-aligns text */
+    padding: 5px 0; /* Reduces padding for a smaller footer */
+    font-size: 0.8rem; /* Reduces font size */
+}
+
+.site-footer a {
+    color: var(--highlight-color); /* Use the highlight color variable */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.site-footer a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
