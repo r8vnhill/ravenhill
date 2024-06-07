@@ -1,7 +1,10 @@
 @using Ravenhill.Model
 <div class="lesson-list">
     @foreach (var lesson in LessonsWithIndex) {
-        <LessonItem Url="@lesson.Lesson.Link" Title="@lesson.Lesson.Name" Counter="@lesson.Index" Description="@lesson.Lesson.Description"/>
+        <LessonItem Url="@lesson.Lesson.Link"
+                    Title="@lesson.Lesson.Name"
+                    Counter="@lesson.Index"
+                    Description="@lesson.Lesson.Description"/>
     }
 </div>
 
@@ -11,17 +14,32 @@
         new Lesson(
             "Introducción a Kotlin",
             "Sintáxis básica de Kotlin, estructuras de control, funciones y null safety.",
-            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EfBtvn6j8hRAkLG8eJnbTrQBDhWbchBVpJEbwY41YUkWGw?e=sbtAOt"
-        ),
-        new Lesson(
-            "Build Systems y Análisis Estático",
-            "Introducción a la automatización de tareas con Gradle y Detekt.",
-            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EcH69EcLq25HhygtiV3RKFsBMuMJpVMu76AvByIFYtCGpg?e=IeheXd"
+            "/memes2/lessons/introduccion-a-kotlin"
         ),
         new Lesson(
             "Programación Orientada a Objetos I",
-            "Repaso de conceptos de programación orientada objetos, introduciendo clases, objetos, clases abstractas e interfaces en Kotlin.",
-            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EfXXneommYNPk6D2yQvYfg0Br_EnhI5eW5DzCeurW2eC7Q?e=JwMP2u"
+            "Repaso de conceptos de programación orientada objetos, introduciendo clases, objetos, clases abstractas e interfaces.",
+            "/memes2/lessons/programacion-orientada-a-objetos-i"
+        ),
+        new Lesson(
+            "Build Systems I",
+            "Introducción a la automatización de tareas con Gradle y Detekt.",
+            "/memes2/lessons/build-systems-i"
+        ),
+        new Lesson(
+            "Build Systems II",
+            "Configuración de tareas y plugins en Gradle.",
+            "/memes2/lessons/build-systems-ii"
+        ),
+        new Lesson(
+            "Build Systems III",
+            "Compilación de aplicaciones y librerías.",
+            "/memes2/lessons/build-systems-iii"
+        ),
+        new Lesson(
+            "Build Systems IV",
+            "Publicación de artefactos y configuración de repositorios.",
+            "/memes2/lessons/build-systems-iv"
         ),
         new Lesson(
             "Programación Orientada a Objetos II",
@@ -82,6 +100,60 @@
             "Colecciones",
             "Tipos y operaciones sobre colecciones",
             "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/Eeg-XC5Wwn5Jt54IxslLyzcBHlW2D2EI8uZlDZk64Cma2A?e=bajk3K"
+        ),
+        new Lesson(
+            "Property-based Testing I",
+            "Introducción a property-based testing con Kotest",
+            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/Ecv29kJFiZdKoOplOAEEfXsB2UlaPb0TItHH5b90HzvlOQ?e=kY27lx"
+        ),
+        new Lesson(
+            "Property-based Testing II",
+            "Generadores arbitrarios",
+            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EcRHjkClBMlGlGBlLaVlyp8Bui8CHAM5PnWAhcniwt6bkQ?e=DrRyJs"
+        ),
+        new Lesson(
+            "Property-based Testing III",
+            "Técnicas de diseño de propiedades",
+            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EW_l1x9eLmRBv3VbbVfFmGwBm7d5CPWnIaPbJxKHK8_-QA?e=5zZ9nD"
+        ),
+        new Lesson(
+            "Property-based Testing IV",
+            "Condiciones de borde y simplificación de propiedades",
+            "https://ravenhill.pages.dev/lessons/property-based-testing-iv"
+        ),
+        new Lesson(
+            "Property-based Testing V",
+            "Stateful properties y generación de estados iniciales",
+            "https://ravenhill.pages.dev/lessons/property-based-testing-v"
+        ),
+        new Lesson(
+            "Property-based Testing VI",
+            "Generación de estados intermedios y finales",
+            "https://ravenhill.pages.dev/lessons/property-based-testing-vi"
+        ),
+        new Lesson(
+            "Programación Orientada a Lenguajes",
+            "DSLs internos",
+            "https://ravenhill.pages.dev/lessons/programacion-orientada-a-lenguajes-ii"
+        ),
+        new Lesson("Metaprogramación I",
+            "Reflexión en Kotlin",
+            "https://ravenhill.pages.dev/lessons/programacion-reflexiva-i"
+        ),
+        new Lesson(
+            "Metaprogramación II",
+            "Procesamiento de anotaciones en tiempo de ejecución",
+            "https://ravenhill.pages.dev/lessons/annotation-processing-i"
+        ),
+        new Lesson(
+            "Metaprogramación III",
+            "Procesamiento de anotaciones en tiempo de compilación",
+            "https://ravenhill.pages.dev/lessons/annotation-processing-ii"
+        ),
+        new Lesson(
+            "Metaprogramación IV",
+            "Procesamiento de símbolos",
+            "https://ravenhill.pages.dev/lessons/symbol-processing"
         )
     ];
 
