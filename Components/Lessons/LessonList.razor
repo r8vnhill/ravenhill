@@ -11,35 +11,44 @@
 @code {
 
     private readonly List<Lesson> _lessons = [
-        new Lesson(
+        new Lesson("Bibliotecas de Software",
+            "Introducción al Diseño de Bibliotecas de Software",
+            "/ccxxxx/lessons/introduccion-al-diseno-de-bibliotecas-de-software"
+        ),
+        new Lesson( 
             "Introducción a Kotlin",
             "Sintáxis básica de Kotlin, estructuras de control, funciones y null safety.",
-            "/memes2/lessons/introduccion-a-kotlin"
+            "/ccxxxx/lessons/introduccion-a-kotlin"
+        ),
+        new Lesson(
+            "Código Limpio y Mantenible",
+            "Principios de diseño de código limpio y mantenible.",
+            "/ccxxxx/lessons/codigo-limpio-y-mantenible"
         ),
         new Lesson(
             "Programación Orientada a Objetos I",
             "Repaso de conceptos de programación orientada objetos, introduciendo clases, objetos, clases abstractas e interfaces.",
-            "/memes2/lessons/programacion-orientada-a-objetos-i"
+            "/ccxxxx/lessons/programacion-orientada-a-objetos-i"
         ),
         new Lesson(
             "Build Systems I",
             "Introducción a la automatización de tareas con Gradle y Detekt.",
-            "/memes2/lessons/build-systems-i"
+            "/ccxxxx/lessons/build-systems-i"
         ),
         new Lesson(
             "Build Systems II",
             "Configuración de tareas y plugins en Gradle.",
-            "/memes2/lessons/build-systems-ii"
+            "/ccxxxx/lessons/build-systems-ii"
         ),
         new Lesson(
             "Build Systems III",
             "Compilación de aplicaciones y librerías.",
-            "/memes2/lessons/build-systems-iii"
+            "/ccxxxx/lessons/build-systems-iii"
         ),
         new Lesson(
             "Build Systems IV",
             "Publicación de artefactos y configuración de repositorios.",
-            "/memes2/lessons/build-systems-iv"
+            "/ccxxxx/lessons/build-systems-iv"
         ),
         new Lesson(
             "Programación Orientada a Objetos II",
@@ -73,17 +82,12 @@
         ),
         new Lesson(
             "Programación Funcional II",
-            "Funciones puras y efectos secundarios.",
+            "Funciones puras y efectos secundarios, y lazy evaluation.",
             "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EZsw8uNFKBdAlwmVfKguUq8BhQ3oUS6RELjLAjp5HGbeZA?e=A2dekU"
         ),
         new Lesson(
             "Programación Funcional III",
-            "Destructuring lambdas, let bindings y deferred computations",
-            "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/ESRWtURsYw1EjiK_l6V6XKwBX_szv_PusnHT2_xLeDBpDg?e=oJHH3E"
-        ),
-        new Lesson(
-            "Programación Funcional IV",
-            "Recursión profunda",
+            "Optimización de funciones recursivas.",
             "https://uchile-my.sharepoint.com/:p:/g/personal/ignacio_slater_uchile_cl/EZe-Y4kzX2BNlAl_aDHkG2cB7OBMFfylEywTpKuCeATzTQ?e=saXJqU"
         ),
         new Lesson(
@@ -157,7 +161,7 @@
         )
     ];
 
-    private List<(Lesson Lesson, int Index)> LessonsWithIndex => _lessons
+    private List<( Lesson Lesson, int Index)> LessonsWithIndex => _lessons
         .Select((lesson, index) => (lesson, index + 1)) // Compute indices starting at 1
         .ToList();
 
